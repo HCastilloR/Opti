@@ -23,19 +23,19 @@ class Town:
         return str(self.name)
 
 
-def get_score(town_a, town_b):
+def get_distance(town_a, town_b):
     x1 = town_a.x
     x2 = town_b.x
     y1 = town_a.y
     y2 = town_b.y
-    return 1 / math.pow(x2 - x1, 2) + math.pow(y2 - y2, 2)
+    return math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
 
 
 def get_fitness(route):
     score = 0
     for i in range(len(route) - 1):
-        score += get_score(route[i], route[i + 1])
-    return score
+        score += get_distance(route[i], route[i + 1])
+    return 1/score
 
 
 def generate_towns():
