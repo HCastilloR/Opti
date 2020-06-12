@@ -6,7 +6,7 @@ from PIL import Image
 
 towns = []
 
-
+#Proyecto creado por Hernan Castillo,Jesús García,Juan Gomez y Daniel Paz
 class Town:
 
     def __init__(self, x, y, name=""):
@@ -18,7 +18,7 @@ class Town:
         return 'Town: ' + self.name + '\tX: ' + \
                str(self.x) + '\tY: ' + str(self.y)
 
-
+#obtener puntajes
 def get_score(town_a, town_b):
     x1 = town_a.x
     x2 = town_b.x
@@ -26,7 +26,7 @@ def get_score(town_a, town_b):
     y2 = town_b.y
     return 1/math.pow(x2-x1,2)+math.pow(y2-y2,2)
 
-
+#clase de las rutas
 class Route:
 
     def __init__(self, route):
@@ -83,7 +83,7 @@ def envy(route_a, route_b):
         route_c.append(splice)
     return route_c
 
-
+#funciones de los 7 pecados capitales
 def sloth(route_a):
     return route_a
 
